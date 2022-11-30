@@ -19,6 +19,7 @@ if (navigator.serviceWorker) {
  * This function will determine the type of triangle.
  */
 function myButtonClicked() {
+
   const lengthA = parseFloat(document.getElementById("side-a").value)
   const lengthB = parseFloat(document.getElementById("side-b").value)
   const lengthC = parseFloat(document.getElementById("side-c").value)
