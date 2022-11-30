@@ -46,24 +46,17 @@ function myButtonClicked() {
     Number(angleC.toFixed(2))
 
   if (sumOfAngles == 180) {
-    if (angleA == angleB && angleB == angleC && angleA == angleC) 
-    {
-    document.getElementById("triangle-type").innerHTML =
-      "<p>This is an equilateral triangle.</p>"
-    } 
-    else if (angleA == angleB || angleB == angleC || angleA == angleC)
-    {
-    document.getElementById("triangle-type").innerHTML =
-      "<p>This is an isosceles triangle.</p>"
+    if (angleA == angleB && angleB == angleC && angleA == angleC) {
+      document.getElementById("triangle-type").innerHTML =
+        "<p>This is an equilateral triangle.</p>"
+    } else if (angleA == angleB || angleB == angleC || angleA == angleC) {
+      document.getElementById("triangle-type").innerHTML =
+        "<p>This is an isosceles triangle.</p>"
+    } else {
+      document.getElementById("triangle-type").innerHTML =
+        "<p>This is an scalene triangle.</p>"
     }
-    else
-    {
-    document.getElementById("triangle-type").innerHTML =
-      "<p>This is an scalene triangle.</p>"
-    }
-  } 
-else 
-  {
+  } else {
     document.getElementById("triangle-type").innerHTML =
       "<p>This is not a triangle.</p>"
   }
