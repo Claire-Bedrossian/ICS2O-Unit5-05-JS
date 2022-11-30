@@ -18,25 +18,39 @@ if (navigator.serviceWorker) {
 /**
  * This function will determine the type of triangle.
  */
- function myButtonClicked() {
+function myButtonClicked() {
   const lengthA = parseFloat(document.getElementById("side-a").value)
   const lengthB = parseFloat(document.getElementById("side-b").value)
   const lengthC = parseFloat(document.getElementById("side-c").value)
 
   // using the cosine law
-  const angleA = Math.acos((lengthB**2 + lengthC**2 - lengthA**2) / (2 * lengthB * lengthC)) * (180/Math.PI)
-  const angleB = Math.acos((lengthC**2 + lengthA**2 - lengthB**2) / (2 * lengthC * lengthA)) * (180/Math.PI)
-  const angleC = Math.acos((lengthA**2 + lengthB**2 - lengthC**2) / (2 * lengthA * lengthB)) * (180/Math.PI)
+  const angleA =
+    Math.acos(
+      (lengthB ** 2 + lengthC ** 2 - lengthA ** 2) / (2 * lengthB * lengthC)
+    ) *
+    (180 / Math.PI)
+  const angleB =
+    Math.acos(
+      (lengthC ** 2 + lengthA ** 2 - lengthB ** 2) / (2 * lengthC * lengthA)
+    ) *
+    (180 / Math.PI)
+  const angleC =
+    Math.acos(
+      (lengthA ** 2 + lengthB ** 2 - lengthC ** 2) / (2 * lengthA * lengthB)
+    ) *
+    (180 / Math.PI)
 
-  const sumOfAngles = Number((angleA).toFixed(2)) + Number((angleB).toFixed(2)) + Number((angleC).toFixed(2))
-
+  const sumOfAngles =
+    Number(angleA.toFixed(2)) +
+    Number(angleB.toFixed(2)) +
+    Number(angleC.toFixed(2))
 
   if (sumOfAngles == 180) {
     if (angleA == angleB && angleB == angleC && angleA == angleC) {
-    document.getElementById("triangle-type").innerHTML =
-      "<p>This is an equilateral triangle.</p>"
-    } else if (angleA == angleB || angleB == angleC || angleA == angleC ) {
-      "<p>This is an scalene triangle.</p>"
+      document.getElementById("triangle-type").innerHTML =
+        "<p>This is an equilateral triangle.</p>"
+    } else if (angleA == angleB || angleB == angleC || angleA == angleC) {
+      ;("<p>This is an scalene triangle.</p>")
     }
   } else {
     document.getElementById("triangle-type").innerHTML =
